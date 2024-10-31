@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import Book from "../Book/Book";
 
 const Books = () => {
   const [Books, setBooks] = useState([]);
@@ -10,7 +11,11 @@ const Books = () => {
   return (
     <div className="my-12">
       <h2 className="text-4xl text-center font-bold">Books</h2>
-      <p>{Books.length}</p>
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 my-6 p-4">
+        {Books.map((book, index) => (
+          <Book key={index} book={book}></Book>
+        ))}
+      </div>
     </div>
   );
 };
