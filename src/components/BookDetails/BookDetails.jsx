@@ -10,7 +10,6 @@ const BookDetails = () => {
   const data = useLoaderData();
 
   const books = data.find((book) => book.bookId === id);
-  console.log(books);
 
   const {
     bookName,
@@ -36,7 +35,7 @@ const BookDetails = () => {
   return (
     <div className="lg:flex items-center gap-6 w-full">
       <div className="lg:w-1/3 rounded-xl">
-        <img className="p-6 h-[720px]" src={image} alt="" />
+        <img className="p-6 lg:h-[720px] rounded-xl" src={image} alt="" />
       </div>
       <div className="lg:w-2/3 space-y-3 p-8">
         <div>

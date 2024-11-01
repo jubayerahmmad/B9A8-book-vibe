@@ -43,6 +43,7 @@ const addWishListToLocalStorage = (id) => {
     storedWishList.push(id);
     const storedWishListStr = JSON.stringify(storedWishList);
     localStorage.setItem("wish-list", storedWishListStr);
+    toast.success("Successfully added to Wishlist");
   }
 };
 

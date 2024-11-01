@@ -79,30 +79,32 @@ const ListedBooks = () => {
           </li>
         </ul>
       </div>
-      <Tabs>
-        <TabList>
-          <Tab>Read Books</Tab>
-          <Tab>Wishlist Books</Tab>
-        </TabList>
+      <div className="text-xl font-bold">
+        <Tabs>
+          <TabList>
+            <Tab>Read Books</Tab>
+            <Tab>Wishlist Books</Tab>
+          </TabList>
 
-        <TabPanel>
-          <div className="my-6 p-3">
-            {readList.map((readBook, i) => (
-              <MarkedRead key={i} readBook={readBook}></MarkedRead>
-            ))}
-          </div>
-        </TabPanel>
-        <TabPanel>
-          <h2>
-            {" "}
+          <TabPanel>
             <div className="my-6 p-3">
-              {wishList.map((readBook, i) => (
+              {readList.map((readBook, i) => (
                 <MarkedRead key={i} readBook={readBook}></MarkedRead>
               ))}
             </div>
-          </h2>
-        </TabPanel>
-      </Tabs>
+          </TabPanel>
+          <TabPanel>
+            <h2>
+              {" "}
+              <div className="my-6 p-3">
+                {wishList.map((readBook, i) => (
+                  <MarkedRead key={i} readBook={readBook}></MarkedRead>
+                ))}
+              </div>
+            </h2>
+          </TabPanel>
+        </Tabs>
+      </div>
     </div>
   );
 };

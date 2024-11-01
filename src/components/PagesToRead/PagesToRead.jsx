@@ -1,9 +1,12 @@
+import { useLoaderData } from "react-router-dom";
+// import { BarChart, Bar, XAxis, YAxis } from "recharts";
+
 const PagesToRead = () => {
-  return (
-    <div>
-      <h1 className="text-4xl mb-12">Pages To read</h1>
-    </div>
-  );
+  const books = useLoaderData();
+  const { totalPages } = books;
+  console.log(books);
+  console.log(totalPages);
+  return <div></div>;
 };
 
 export default PagesToRead;

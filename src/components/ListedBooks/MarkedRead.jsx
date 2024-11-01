@@ -1,7 +1,9 @@
 import PropTypes from "prop-types";
+import { useNavigate } from "react-router-dom";
 
 const MarkedRead = ({ readBook }) => {
   const {
+    bookId,
     bookName,
     author,
     tags,
@@ -12,6 +14,12 @@ const MarkedRead = ({ readBook }) => {
     totalPages,
     yearOfPublishing,
   } = readBook;
+
+  const navigate = useNavigate();
+  const viewDetails = (bookId) => {
+    navigate(`/books/${bookId}`);
+  };
+
   return (
     <div className="border-2 rounded-xl lg:flex gap-6 my-8 p-6">
       <div>
@@ -47,15 +55,18 @@ const MarkedRead = ({ readBook }) => {
           <p>Page: {totalPages}</p>
         </div>
         <div className="divider"></div>
-        <div className="lg:flex items-center gap-7">
-          <span className="px-5 py-2 rounded-full font-semibold bg-green-100 text-green-500">
+        <div className="lg:flex items-center gap-7 space-y-4 lg:space-y-0 text-center">
+          <p className="px-5 py-2 rounded-full font-semibold bg-green-100 text-green-500">
             Category: {category}
-          </span>
-          <span className="px-5 py-2 rounded-full font-semibold bg-yellow-100 text-yellow-500 ">
+          </p>
+          <p className="px-5 py-2 rounded-full font-semibold bg-yellow-100 text-yellow-500 ">
             Rating: {rating}
-          </span>
+          </p>
 
-          <button className="btn text-white bg-green-500 rounded-full my-4 lg:my-0">
+          <button
+            onClick={() => viewDetails(bookId)}
+            className="btn btn-outline btn-success rounded-full w-full lg:w-fit my-4 lg:my-0 text-lg"
+          >
             View Details
           </button>
         </div>
