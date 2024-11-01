@@ -1,5 +1,8 @@
-/* eslint-disable no-unused-vars */
 import { useLoaderData, useParams } from "react-router-dom";
+import {
+  addReadListToLocalStorage,
+  addWishListToLocalStorage,
+} from "../../utilities/addToLS";
 
 const BookDetails = () => {
   const { bookId } = useParams();
@@ -22,7 +25,13 @@ const BookDetails = () => {
     yearOfPublishing,
   } = books;
 
-  //   const handleMarkAsRead = () => {};
+  const handleMarkAsRead = (id) => {
+    addReadListToLocalStorage(id);
+  };
+
+  const handleAddToWishList = (id) => {
+    addWishListToLocalStorage(id);
+  };
 
   return (
     <div className="lg:flex items-center gap-6 w-full">
@@ -70,8 +79,18 @@ const BookDetails = () => {
           </div>
         </div>
         <div className="flex gap-4">
-          <button className="btn btn-outline">Mark as Read</button>
-          <button className="btn bg-teal-400 text-white">Wishlist</button>
+          <button
+            onClick={() => handleMarkAsRead(bookId)}
+            className="btn btn-outline"
+          >
+            Mark as Read
+          </button>
+          <button
+            onClick={() => handleAddToWishList(bookId)}
+            className="btn bg-teal-400 text-white"
+          >
+            Wishlist
+          </button>
         </div>
       </div>
     </div>

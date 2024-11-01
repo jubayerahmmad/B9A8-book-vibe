@@ -7,6 +7,10 @@ import Root from "./components/Root/Root";
 import ErrorPage from "./components/ErrorPage/ErrorPage";
 import Home from "./components/Home/Home";
 import BookDetails from "./components/BookDetails/BookDetails";
+import ListedBooks from "./components/ListedBooks/ListedBooks";
+import PagesToRead from "./components/PagesToRead/PagesToRead";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const router = createBrowserRouter([
   {
@@ -23,6 +27,15 @@ const router = createBrowserRouter([
         element: <BookDetails></BookDetails>,
         loader: () => fetch("/booksData.json"),
       },
+      {
+        path: "/listedBooks",
+        element: <ListedBooks></ListedBooks>,
+        loader: () => fetch("/booksData.json"),
+      },
+      {
+        path: "/pagesToRead",
+        element: <PagesToRead></PagesToRead>,
+      },
     ],
   },
 ]);
@@ -30,5 +43,6 @@ const router = createBrowserRouter([
 createRoot(document.getElementById("root")).render(
   <StrictMode>
     <RouterProvider router={router} />
+    <ToastContainer autoClose={1500}></ToastContainer>
   </StrictMode>
 );

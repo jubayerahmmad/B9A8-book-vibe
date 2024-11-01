@@ -1,4 +1,5 @@
 import { NavLink } from "react-router-dom";
+import "./navbar.css";
 
 const Navbar = () => {
   const links = (
@@ -7,10 +8,10 @@ const Navbar = () => {
         <NavLink to="/">Home</NavLink>
       </li>
       <li>
-        <NavLink>Listed Books</NavLink>
+        <NavLink to="/listedBooks">Listed Books</NavLink>
       </li>
       <li>
-        <NavLink>Pages To Read</NavLink>
+        <NavLink to="/pagesToRead">Pages To Read</NavLink>
       </li>
     </>
   );
