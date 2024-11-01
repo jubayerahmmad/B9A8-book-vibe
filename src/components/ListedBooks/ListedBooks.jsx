@@ -59,11 +59,11 @@ const ListedBooks = () => {
 
   return (
     <div>
-      <div className="dropdown dropdown-bottom flex justify-center">
+      <div className="dropdown dropdown-bottom flex justify-center mb-6">
         <div
           tabIndex={0}
           role="button"
-          className="btn bg-green-500 text-white m-1"
+          className="btn bg-green-500 text-white mb-8"
         >
           {sort ? `Sort by ${sort}` : "Sort By"}
         </div>

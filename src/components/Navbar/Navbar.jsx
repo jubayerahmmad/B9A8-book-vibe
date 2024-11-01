@@ -16,7 +16,7 @@ const Navbar = () => {
     </>
   );
   return (
-    <div className="navbar bg-base-100">
+    <div className="navbar bg-base-100 mb-6">
       <div className="navbar-start">
         <div className="dropdown">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -37,15 +37,17 @@ const Navbar = () => {
           </div>
           <ul
             tabIndex={0}
-            className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow"
+            className="gap-4 px-2 py-1 flex flex-col font-semibold dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-56 shadow"
           >
             {links}
           </ul>
         </div>
-        <a className="btn btn-ghost text-2xl">Book Vibe</a>
+        <NavLink to="/" className="btn btn-ghost text-4xl font-bold">
+          Book Vibe
+        </NavLink>
       </div>
       <div className="navbar-center hidden lg:flex">
-        <ul className="menu menu-horizontal px-1 text-xl gap-4">{links}</ul>
+        <ul className="text-2xl gap-4 px-4 py-2 flex font-semibold">{links}</ul>
       </div>
       <div className="navbar-end gap-2">
         <a className="btn bg-teal-500 text-white btn-sm lg:btn-md">Sign In</a>
